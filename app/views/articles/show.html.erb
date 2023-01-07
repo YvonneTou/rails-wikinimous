@@ -1,0 +1,14 @@
+<div class="container my-5"></div>
+  <div class="row mx-5">
+    <h1><%= @article.title %></h1>
+    <p><%= @article.content %><p>
+  </div>
+
+  <div class="row m-5">
+   <%= link_to 'Edit this article', edit_article_path(@article) %>
+  </div>
+
+  <div class="row m-5">
+   <%= link_to 'Back to list', articles_path %>
+  </div>
+</div>

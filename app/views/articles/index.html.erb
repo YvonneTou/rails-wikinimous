@@ -1,0 +1,16 @@
+<div class="container my-5"></div>
+  <div class="row mx-5">
+    <h1>My Articles</h1>
+    <%# <div class="in-line"> %>
+      <% @articles.each do |article| %>
+        <p><%= link_to article.title, article_path(article) %>
+        <%= link_to article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash-can"></i></p>
+        <% end %>
+      <% end %>
+    <%# </div> %>
+    <div class="row my-5">
+      <%= link_to 'Add a new article', new_article_path %>
+    </div>
+  </div>
+</div>
