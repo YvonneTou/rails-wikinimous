@@ -1,16 +1,23 @@
 <div class="container my-5"></div>
   <div class="row mx-5">
-    <h1>My Articles</h1>
-    <%# <div class="in-line"> %>
-      <% @articles.each do |article| %>
-        <p><%= link_to article.title, article_path(article) %>
-        <%= link_to article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash-can"></i></p>
-        <% end %>
+    <div class="d-flex justify-content-between">
+      <h1>My Articles</h1>
+       <div class="row my-3">
+      <%= link_to new_article_path do %>
+        <button type="button" class="btn btn-success">Add a new article</button>
       <% end %>
-    <%# </div> %>
-    <div class="row my-5">
-      <%= link_to 'Add a new article', new_article_path %>
     </div>
+    </div>
+    <% @articles.each do |article| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <p><%= link_to article.title, article_path(article) %>
+          <%= link_to article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash-can"></i></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
   </div>
 </div>

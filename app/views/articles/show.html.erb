@@ -1,14 +1,25 @@
 <div class="container my-5"></div>
   <div class="row mx-5">
     <h1><%= @article.title %></h1>
-    <p><%= @article.content %><p>
+    <div class="card mb-3">
+      <div class="card-body">
+        <%= @article.content %>
+      </div>
+    </div>
   </div>
 
-  <div class="row m-5">
-   <%= link_to 'Edit this article', edit_article_path(@article) %>
-  </div>
-
-  <div class="row m-5">
-   <%= link_to 'Back to list', articles_path %>
+  <div class="row mx-4">
+    <div class="d-flex flex-row mb-3">
+      <div class="p-2">
+        <%= link_to edit_article_path(@article) do %>
+          <button type="button" class="btn btn-warning">Edit this article</button>
+        <% end %>
+      </div>
+      <div class="p-2">
+        <%= link_to articles_path do %>
+          <button type="button" class="btn btn-primary">Back to list</button>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
